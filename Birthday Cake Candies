@@ -1,0 +1,25 @@
+//Not an optimized solution but a brute force approach
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String[] input = sc.nextLine().split(" ");
+        int[] x = new int[input.length];
+        for (int i = 0; i < input.length; i++) {
+            x[i] = Integer.parseInt(input[i]);
+        }
+        int maxy = x[0];   
+        int count = 0;
+        for (int i = 0; i < x.length; i++) {
+            if (x[i] > maxy) {
+                maxy = x[i];
+            }
+        }
+        for (int i = 0; i < x.length; i++) {
+            if (x[i] == maxy) {
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+}
