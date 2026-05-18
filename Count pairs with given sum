@@ -1,0 +1,16 @@
+n = int(input())
+arr = list(map(int, input().split()))
+k = int(input())
+
+freq = {}
+count = 0
+
+for num in arr:
+    complement = k - num
+
+    if complement in freq:
+        count += freq[complement]
+
+    freq[num] = freq.get(num, 0) + 1
+
+print(count)
